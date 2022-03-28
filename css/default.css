@@ -1,3 +1,7 @@
+:root {
+    --naver-green: #19ce60;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +23,15 @@ img {
     vertical-align: middle;
 }
 
+button {
+    border: none;
+}
+
+input,
+textarea {
+    outline: none;
+}
+
 .clearfix {
     clear: both;
 }
@@ -31,4 +44,317 @@ img {
 #main-header {
     position: relative;
     background-color: #fff;
+}
+
+#main-header .search_area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    height: 160px;
+    background-color: #fff;
+
+    border-bottom: 1px solid #e4e8eb;
+}
+
+#main-header .search_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+    width: 582px;
+    height: 52px;
+
+    border: solid 2px var(--naver-green);
+}
+
+#main-header .search_wrap input {
+    width: calc(100% - 52px);
+    height: 100%;
+    padding: 13px 15px;
+    border: none;
+
+    font-size: 22px;
+}
+
+#main-header .search_wrap button {
+    width: 52px;
+    height: 100%;
+    background-color: var(--naver-green);
+}
+
+#main-header .search_wrap button i img {
+    width: 80%;
+    height: 80%;
+    color: #fff;
+}
+
+#main-header #navBar {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 12%);
+}
+
+#main-header #navBar ul {
+    padding: 11px 0;
+}
+
+#main-header #navBar ul li {
+    display: inline-block;
+    margin-right: 5px;
+    /* inline-block은 기본적으로 가지는 공백이 있기 떄문에 margin-right: 5px 외에 추가적인 공백이 나타난다.
+    따라서 그 공백조차 제외하고 싶다면 flex를 사용해 주면 된다. */
+}
+
+#main-header #navBar ul li a {
+    color: #03c75a;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+main {
+    overflow: hidden;
+    /* float을 사용할 때, 자식요소들의 높이값 총합으로 부모요소의 높이를 결정하려면 overflow:hidden; 을 선언해 주어야 한다.
+    float을 이용하면 3차원 요소가 되기 때문이다. */
+    padding-top: 20px;
+}
+
+main #main_left {
+    float: left;
+    width: 750px;
+}
+
+main #main_right {
+    float: right;
+    width: 350px;
+    height: 2000px;
+    background-color: pink;
+}
+
+main #main_left #banner_wrap {
+    width: 750px;
+    height: 135px;
+    background-color: #000;
+
+    margin-bottom: 12px;
+}
+
+main #main_left #news_wrap .news_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 22px 0 16px;
+}
+
+main #main_left #news_wrap .news_header h2 {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+main #main_left #news_wrap .news_header .news_btn_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 60px;
+}
+
+main #main_left #news_wrap .news_header .news_btn_wrap button {
+    width: 15px;
+    height: 15px;
+    background-color: blue;
+}
+
+main #main_left #news_wrap .news_lists {
+    overflow: hidden;
+    border: solid 1px #dae1e6;
+}
+
+main #main_left #news_wrap .news_lists .news_list {
+    position: relative;
+    float: left;
+    width: 16.66%;
+    height: 65px;
+    background-color: #fff;
+
+    border-bottom: solid 1px #e4e8eb;
+    border-right: solid 1px #e4e8eb;
+
+    text-align: center;
+    /* img태그는 inline요소의 성격을 갖기 때문에 text-align으로 정렬이 가능 */
+}
+
+main #main_left #news_wrap .news_lists .news_list:nth-child(6n) {
+    border-right: none;
+}
+
+main #main_left #news_wrap .news_lists .news_list:nth-child(19),
+main #main_left #news_wrap .news_lists .news_list:nth-child(20),
+main #main_left #news_wrap .news_lists .news_list:nth-child(21),
+main #main_left #news_wrap .news_lists .news_list:nth-child(22),
+main #main_left #news_wrap .news_lists .news_list:nth-child(23),
+main #main_left #news_wrap .news_lists .news_list:nth-child(24) {
+    border-bottom: none;
+}
+
+main #main_left #news_wrap .news_lists .news_list img {
+    position: relative;
+
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+main #main_left #blog_wrap {
+    padding-top: 35px;
+}
+
+main #main_left #blog_wrap .blog_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 17px;
+}
+
+main #main_left #blog_wrap .blog_header .left_header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+main #main_left #blog_wrap .blog_header .left_header h3 {
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+main #main_left #blog_wrap .blog_header .left_header span {
+    font-size: 12px;
+    color: grey;
+}
+
+main #main_left #blog_wrap .blog_header .right_header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+main #main_left #blog_wrap .blog_header .right_header span {
+    font-size: 12px;
+    color: grey;
+}
+
+main #main_left #blog_wrap .blog_header .right_header .count strong {
+    color: #000;
+}
+
+main #main_left #blog_wrap .blog_nav ul {
+    overflow: hidden;
+    /* 자식 요소인 li가 float으로 인해 3차원 요소가 되었기 때문에, 그 높이값 인식을 위해 overflow: hidden; */
+    border: solid 1px #dae1e6;
+}
+
+main #main_left #blog_wrap .blog_nav ul li {
+    float: left;
+    width: 12.5%;
+    height: 49px;
+
+    border-right: solid 1px #dae1e6;
+}
+
+main #main_left #blog_wrap .blog_nav ul li:last-child {
+    border-right: none;
+}
+
+main #main_left #blog_wrap .blog_nav ul li a {
+    display: block;
+    /* a태그 요소에 display: block; 을 선언하고 부모 요소와 width height를 동일하게 맞춰주면, 부모 요소 영역 어느 곳을 눌러도 a태그 요소가 선택된다. */
+    width: 100%;
+    height: 100%;
+
+    line-height: 49px;
+    /* text는 요소의 높이와 line-height를 동일한 값으로 맞춰주면 y축 중앙 정렬 효과가 생긴다. */
+    text-align: center;
+}
+
+main #main_left #blog_wrap .blog_list_wrap {
+    padding-top: 18px;
+    border-bottom: solid 1px #dae1e6;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li {
+    margin-bottom: 18px;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li a {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li a img {
+    width: 170px;
+    height: 114px;
+    margin-right: 21px;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li a .blog_list_info {
+    width: 559px;
+    padding-right: 47px;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li a .blog_list_info span {
+    font-size: 12px;
+    color: #35ae5e;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li a .blog_list_info h4 {
+    font-size: 13px;
+}
+
+main #main_left #blog_wrap .blog_list_wrap li a .blog_list_info p {
+    font-size: 13px;
+}
+
+main
+    #main_left
+    #blog_wrap
+    .blog_list_wrap
+    li
+    a
+    .blog_list_info
+    .date_wrap
+    span {
+    color: #505050;
+}
+
+main #main_left #blog_wrap .blog_media_wrap {
+}
+
+main #main_left #blog_wrap .blog_media_wrap ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 0;
+
+    border-bottom: solid 1px #dae1e6;
+}
+
+main #main_left #blog_wrap .blog_media_wrap ul .blog_media_info {
+    padding-top: 12px;
+}
+
+main #main_left #blog_wrap .blog_media_wrap ul .blog_media_info h4 {
+    font-size: 13px;
+}
+
+main #main_left #blog_wrap .blog_media_wrap ul .blog_media_info span {
+    font-size: 12px;
 }
